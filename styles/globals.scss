@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+**************************************
+    CSS FOR MOBILE NAVIGATION MENU 
+**************************************
+**/
+
+// Mobile menu styles
+
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+  // Add a delay to the dark mode transition
+  // transition: background .3s;
+  @apply bg-gray-25 dark:bg-gray-800;
+}
+
+.mobile-hidden {
+  position: absolute;
+  width: 100vw;
+  min-height: 100%;
+  right: -100vw;
+  transition: all ease-in-out 0.4s;
+  display: flex;
+  flex-direction: column;
+  @apply bg-gray-100 z-10 px-4 pb-4 dark:bg-gray-700;
+}
+
+.mobile-show {
+  // The top value should be the height of the navbar
+  top: 72px;
+  right: 0;
+}
+
+// Burger menu button styles
+
+.burger {
+  @apply flex flex-col gap-1;
+}
+
+.burger div {
+  @apply duration-300 h-[2px] w-5 bg-gray-900 dark:bg-white rounded-full;
+}
+
+.open .line1 {
+  transform: rotate(-45deg) translate(-5.7px, 5.7px);
+  @apply translate-y-2 rotate-45;
+}
+
+.open .line2 {
+  @apply opacity-0;
+}
+.open .line3 {
+  // transform: rotate(45deg) translate(-7px, -7px);
+  @apply -translate-y-1 -rotate-45;
+}
+
+.active {
+  right: 0 !important;
+}
