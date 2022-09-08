@@ -1,5 +1,10 @@
 import Image from "next/image";
-import { PrimaryButtonLarge, SecondaryButtonLarge, SimpleSlider, TextInput } from "./MyUI";
+import {
+  PrimaryButtonLarge,
+  SecondaryButtonLarge,
+  SimpleSlider,
+  TextInput,
+} from "./MyUI";
 import { useState } from "react";
 
 export default function HeroSection() {
@@ -29,8 +34,8 @@ export default function HeroSection() {
           </h1>
           <p className="max-w-3xl mb-12 text-lg text-center text-gray-500 sm:text-xl dark:text-gray-400">
             The perfect template to start your next project! Organized file
-            structure, global state, hooks, custom components, tailwind css, design system,
-            responsive navigation, and dark mode.
+            structure, global state, hooks, custom components, tailwind css,
+            design system, responsive navigation, and dark mode.
           </p>
           {/* Button Container */}
           <div className="flex flex-col w-full gap-4 mb-12 sm:mb-20 sm:flex-row sm:items-center sm:justify-center">
@@ -38,7 +43,7 @@ export default function HeroSection() {
             <PrimaryButtonLarge
               href="#"
               onClick={toggleDarkMode}
-              text="Toggle Mode"
+              text="Buy"
             />
           </div>
           {/* Hero Image */}

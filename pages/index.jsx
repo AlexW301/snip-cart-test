@@ -1,5 +1,10 @@
 import HeroSection from "../components/HeroSection";
-import { PrimaryButton, SelectMenu, SimpleSlider, TextInput } from "../components/MyUI";
+import {
+  PrimaryButton,
+  SelectMenu,
+  SimpleSlider,
+  TextInput,
+} from "../components/MyUI";
 import { useState } from "react";
 
 export default function Home() {
@@ -25,15 +30,24 @@ export default function Home() {
         />
         <div className="flex flex-col justify-center w-full mt-12 lg:mt-0 lg:pl-36">
           <h3 className="max-w-md mx-auto mb-3 font-medium text-displaysm lg:text-displaymd dark:text-white">
-            This is a Simple Component
+            Test Product
           </h3>
           <p className="max-w-md mx-auto text-sm text-gray-700 dark:text-gray-200 lg:text-md">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione,
-            omnis! Esse earum ipsum blanditiis molestiae magnam iste officiis
-            architecto?
+            Price $25.00
           </p>
           <div className="mx-16 mt-8">
-          <PrimaryButton href={"#test"} text="Click Here" />
+            <PrimaryButton href={"#test"} text="Click Here" />
+            <button
+              className="snipcart-add-item buy-button"
+              data-item-id={1}
+              data-item-price={25}
+              data-item-url={`https://9a97-2603-3005-218d-c100-00-1cb1.ngrok.io`}
+              data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
+              data-item-image={`/images/laptop.png`}
+              data-item-name={`test product`}
+            >
+              buy
+            </button>
           </div>
         </div>
       </div>
