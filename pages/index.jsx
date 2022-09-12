@@ -5,7 +5,7 @@ import {
   SimpleSlider,
   TextInput,
 } from "../components/MyUI";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const options = [
@@ -15,6 +15,16 @@ export default function Home() {
   ];
   const [value, setValue] = useState("");
   const [selected, setSelected] = useState(options[0]);
+
+  useEffect(() => {
+    document.addEventListener("snipcart.ready", () => {
+      console.log('snipcart ready')
+
+      Snipcart.events.on("cart.confirmed", (cartItem) => {
+        console.log(cartItem)
+      })
+    })
+  },[])
 
   return (
     <>
@@ -37,17 +47,32 @@ export default function Home() {
           </p>
           <div className="mx-16 mt-8">
             <PrimaryButton href={"#test"} text="Click Here" />
+            {1 === 1 && (
             <button
-              className="snipcart-add-item buy-button"
-              data-item-id={1}
-              data-item-price={25}
-              data-item-url={`https://9a97-2603-3005-218d-c100-00-1cb1.ngrok.io`}
-              data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
-              data-item-image={`/images/laptop.png`}
-              data-item-name={`test product`}
-            >
-              buy
-            </button>
+            className="snipcart-add-item buy-button"
+            data-item-id={1}
+            data-item-price={25}
+            data-item-url={`https://609f-2603-3005-218d-c100-00-1cb1.ngrok.io`}
+            data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
+            data-item-image={`/images/laptop.png`}
+            data-item-name={`test product`}
+          >
+            buy
+          </button>
+            )}
+            {1 === 2 && (
+            <button
+            className="snipcart-add-item buy-button"
+            data-item-id={1}
+            data-item-price={25}
+            data-item-url={`https://609f-2603-3005-218d-c100-00-1cb1.ngrok.io`}
+            data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
+            data-item-image={`/images/laptop.png`}
+            data-item-name={`test product`}
+          >
+            add
+          </button>
+            )}
           </div>
         </div>
       </div>
