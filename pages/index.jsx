@@ -20,8 +20,11 @@ export default function Home() {
     document.addEventListener("snipcart.ready", () => {
       console.log('snipcart ready')
 
-      Snipcart.events.on("cart.confirmed", (cartItem) => {
-        console.log(cartItem)
+      Snipcart.events.on("cart.confirmed", async (order) => {
+        console.log(order)
+        console.log(order.billingAddress.fullName.split(" ")[0])
+        console.log(order.billingAddress.fullName.split(" ")[1])
+        console.log(order.email)
       })
     })
   },[])
@@ -52,7 +55,7 @@ export default function Home() {
             className="snipcart-add-item buy-button"
             data-item-id={1}
             data-item-price={25}
-            data-item-url={`https://609f-2603-3005-218d-c100-00-1cb1.ngrok.io`}
+            data-item-url={`https://4714-2603-3005-218d-c100-00-1cb1.ngrok.io`}
             data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
             data-item-image={`/images/laptop.png`}
             data-item-name={`test product`}
@@ -65,7 +68,7 @@ export default function Home() {
             className="snipcart-add-item buy-button"
             data-item-id={1}
             data-item-price={25}
-            data-item-url={`https://609f-2603-3005-218d-c100-00-1cb1.ngrok.io`}
+            data-item-url={`https://4714-2603-3005-218d-c100-00-1cb1.ngrok.io`}
             data-item-file-guid={`c25bc085-8f00-44d7-a65e-088e358257cf`}
             data-item-image={`/images/laptop.png`}
             data-item-name={`test product`}
